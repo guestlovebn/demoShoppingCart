@@ -39,7 +39,7 @@
             </tr>
         </c:forEach>
     </table>
-        <form name="CheckOutForm" method="post" action="Shopping">
+        <form name="CheckOutForm" method="POST" action="Shopping">
             <input type="hidden" name="action" value="checkout" />
             <input type="submit" value="<fmt:message key="checkout" />" name="checkout" />
         </form>

@@ -108,7 +108,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
         return;
       out.write("\n");
       out.write("                    \n");
-      out.write("                    <br> <br>\n");
+      out.write("                    <br/> \n");
+      out.write("                    <br/>\n");
       out.write("                    <b>Quantity</b>\n");
       out.write("                    <input type=\"text\" value=\"1\" name=\"quantity\" />\n");
       out.write("                    <input type=\"hidden\" name=\"action\" value=\"ADD\" />\n");

@@ -76,28 +76,43 @@ public class ShoppingServlet extends HttpServlet {
 //        Product product=new Product(Integer.parseInt(data[0]),data[1],data[2],Float.parseFloat(data[3]));
         ProductCart buyList = (ProductCart) session.getAttribute("prod");
         String action = request.getParameter("action");
-        if (!action.equalsIgnoreCase("checkout")) {
-            if (action.equalsIgnoreCase("delete")) {
+//        if (!action.equalsIgnoreCase("checkout")) {
+//            if (action.equalsIgnoreCase("delete")) {
+//
+//            } else {
+//                if (action.equalsIgnoreCase("add")) {
+//
+//                } else if (action.equalsIgnoreCase("checkout")) {
+//
+//                }
+//
+//            }
+//            RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+//            rd.forward(request, response);
+//        }
+        switch (action.toLowerCase()) {
+            case "delete":
                 int productId = Integer.parseInt(request.getParameter("delItem"));
                 buyList.removeItem(productId);
-            } else {
-                if (action.equalsIgnoreCase("add")) {
-                    if (buyList == null) {
-                        buyList = new ProductCart();
-
-                    }
-                    addProduct(request, response, buyList);
-                    session.setAttribute("prod", buyList);
-
-                } else {
-                    if (action.equalsIgnoreCase("checkout")) {
-                        RequestDispatcher rd = request.getRequestDispatcher("checkout.jsp");
-                        rd.forward(request, response);
-                    }
+                RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+                rd.forward(request, response);
+                break;
+            case "add":
+                if (buyList == null) {
+                    buyList = new ProductCart();
                 }
-            }
-            RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
-            rd.forward(request, response);
+                addProduct(request, response, buyList);
+                session.setAttribute("prod", buyList);
+                rd = request.getRequestDispatcher("index.jsp");
+                rd.forward(request, response);
+                break;
+            case "checkout":
+                rd = request.getRequestDispatcher("checkout.jsp");
+                rd.forward(request, response);
+                response.sendRedirect("checkout.jsp");
+                break;
+            default:
+                break;
         }
 
     }
