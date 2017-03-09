@@ -21,7 +21,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author TienNN5
+ * @author DSLP
  */
 public class ShoppingServlet extends HttpServlet {
 

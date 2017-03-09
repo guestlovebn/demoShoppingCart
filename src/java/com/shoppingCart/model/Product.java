@@ -7,18 +7,18 @@
 package com.shoppingCart.model;
 
 /**
- * 
- * Author     : Tien Nguyen
- * Created on : Mar 7, 2017, 10:37:09 AM
+ *
+ * Author : DSLP Created on : Mar 7, 2017, 10:37:09 AM
  *
  */
 public class Product {
+
     private int id;
     private String name;
     private String type;
     private float price;
-private int quantity;
-    
+    private int quantity;
+
     public Product() {
     }
 
@@ -27,7 +27,7 @@ private int quantity;
         this.name = name;
         this.type = type;
         this.price = price;
-        
+
     }
 
     public int getQuantity() {
@@ -71,6 +71,6 @@ private int quantity;
     public void setPrice(float price) {
         this.price = price;
     }
-    
+
     
 }
