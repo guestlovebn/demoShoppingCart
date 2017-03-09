@@ -4,7 +4,7 @@
     Author     : TienNN5
 --%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <fmt:setLocale value="${param.language}" />
@@ -20,12 +20,12 @@
         
         <hr>
         <jsp:useBean id="prod" class="com.shoppingCart.model.ProductCart" />
-        <form  action="Shopping"  name="shoppingForm" method="post">
+        <form  action="Shopping"  name="shoppingForm" method="POST">
             <b><fmt:message key="product" /> </b>
             <select name="products">
                 <c:forEach var="p" items="${prod.product}">
-                    <option >
-                        ${p.getId()}${"|"}${p.getName()}${"|"}${p.getType}${"|"}${p.getPrice()}
+                    <option>
+                        ${p.getId()}|${p.getName()}|${p.getType()}|${p.getPrice()}
                     </option>
                     
                 </c:forEach>

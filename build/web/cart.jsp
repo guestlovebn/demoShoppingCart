@@ -22,7 +22,7 @@
             <td><b><fmt:message key="quantity" /></b></td>
         </tr>
         
-        <c:forEach var="item" items="${prod.cartItem}}">
+        <c:forEach var="item" items="${prod.cartItem}">
             <tr>
                 <td>${item.getId()}</td>
                 <td>${item.getName()}</td>

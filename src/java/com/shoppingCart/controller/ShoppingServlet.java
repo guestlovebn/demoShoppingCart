@@ -5,6 +5,7 @@
  */
 package com.shoppingCart.controller;
 
+import com.shoppingCart.model.Product;
 import com.shoppingCart.model.ProductCart;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -70,10 +71,12 @@ public class ShoppingServlet extends HttpServlet {
         if (session == null) {
             response.sendRedirect("shoppingError.jsp");
         }
-
+//        String products=request.getParameter("products");
+//        String[] data=products.split("|");
+//        Product product=new Product(Integer.parseInt(data[0]),data[1],data[2],Float.parseFloat(data[3]));
         ProductCart buyList = (ProductCart) request.getAttribute("prod");
         String action = request.getParameter("action");
-        if (!action.equalsIgnoreCase("Checkout")) {
+        if (!action.equalsIgnoreCase("checkout")) {
             if (action.equalsIgnoreCase("delete")) {
                 int productId = Integer.parseInt(request.getParameter("delItem"));
                 buyList.removeItem(productId);
@@ -98,7 +101,7 @@ public class ShoppingServlet extends HttpServlet {
     }
 
     private void addProduct(HttpServletRequest request, HttpServletResponse response, ProductCart product) {
-        String myProduct = request.getParameter("product");
+        String myProduct = request.getParameter("products");
         String quantity = request.getParameter("quantity");
         if (!validateQuantity(quantity)) {
             try {
