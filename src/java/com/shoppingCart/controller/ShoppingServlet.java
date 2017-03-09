@@ -74,7 +74,7 @@ public class ShoppingServlet extends HttpServlet {
 //        String products=request.getParameter("products");
 //        String[] data=products.split("|");
 //        Product product=new Product(Integer.parseInt(data[0]),data[1],data[2],Float.parseFloat(data[3]));
-        ProductCart buyList = (ProductCart) request.getAttribute("prod");
+        ProductCart buyList = (ProductCart) session.getAttribute("prod");
         String action = request.getParameter("action");
         if (!action.equalsIgnoreCase("checkout")) {
             if (action.equalsIgnoreCase("delete")) {
@@ -84,11 +84,11 @@ public class ShoppingServlet extends HttpServlet {
                 if (action.equalsIgnoreCase("add")) {
                     if (buyList == null) {
                         buyList = new ProductCart();
-                        addProduct(request, response, buyList);
+
                     }
+                    addProduct(request, response, buyList);
                     session.setAttribute("prod", buyList);
-                    RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
-                    rd.forward(request, response);
+
                 } else {
                     if (action.equalsIgnoreCase("checkout")) {
                         RequestDispatcher rd = request.getRequestDispatcher("checkout.jsp");
@@ -96,6 +96,8 @@ public class ShoppingServlet extends HttpServlet {
                     }
                 }
             }
+            RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+            rd.forward(request, response);
         }
 
     }

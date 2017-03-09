@@ -30,7 +30,8 @@
                     
                 </c:forEach>
                     
-                    <br> <br>
+                    <br/> 
+                    <br/>
                     <b>Quantity</b>
                     <input type="text" value="1" name="quantity" />
                     <input type="hidden" name="action" value="ADD" />
