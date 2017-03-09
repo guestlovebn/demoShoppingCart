@@ -107,9 +107,9 @@ public class ShoppingServlet extends HttpServlet {
                 rd.forward(request, response);
                 break;
             case "checkout":
-                rd = request.getRequestDispatcher("checkout.jsp");
+                ServletContext sc=getServletContext();
+                rd = request.getRequestDispatcher("checkout.jsp");                
                 rd.forward(request, response);
-                response.sendRedirect("checkout.jsp");
                 break;
             default:
                 break;

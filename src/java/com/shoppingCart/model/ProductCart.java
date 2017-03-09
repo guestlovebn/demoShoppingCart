@@ -52,7 +52,7 @@ public class ProductCart {
         for (com.shoppingCart.model.Product cardItem : cardItems) {
             if (cardItem.getId() == id) {
                 p = cardItem;
-                setAmount(getAmount() + quantity + p.getPrice());
+                setAmount(getAmount() + quantity * p.getPrice());
                 p.setQuantity(quantity + p.getQuantity());
                 match = true;
                 break;
@@ -64,7 +64,7 @@ public class ProductCart {
             p.setName(name);
             p.setPrice((float) price);
             p.setType(type);
-            setAmount(getAmount() + quantity + p.getPrice());
+            setAmount(getAmount() + quantity * p.getPrice());
             p.setQuantity(quantity);
             cardItems.add(p);
         }

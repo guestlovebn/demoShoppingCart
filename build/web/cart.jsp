@@ -4,10 +4,9 @@
     Author     : TienNN5
 --%>
 
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <fmt:setLocale value="${param.language}" />
 <fmt:setBundle basename="com.shoppingCart.language.shopping" />
 <jsp:useBean id="prod" class="com.shoppingCart.model.ProductCart" scope="session"/>
@@ -21,7 +20,7 @@
             <td><b><fmt:message key="price" /></b></td>
             <td><b><fmt:message key="quantity" /></b></td>
         </tr>
-        
+
         <c:forEach var="item" items="${prod.cartItem}">
             <tr>
                 <td>${item.getId()}</td>
@@ -39,8 +38,8 @@
             </tr>
         </c:forEach>
     </table>
-        <form name="CheckOutForm" method="POST" action="Shopping">
-            <input type="hidden" name="action" value="checkout" />
-            <input type="submit" value="<fmt:message key="checkout" />" name="checkout" />
-        </form>
+    <form name="CheckOutForm" method="POST" action="Shopping">
+        <input type="hidden" name="action" value="checkout" />
+        <input type="submit" value="<fmt:message key="checkout" />" name="checkout" />
+    </form>
 </center>

@@ -28,23 +28,22 @@
                 <td><b><fmt:message key="quantity" /></b></td>
             </tr>
 
-            <c:forEach var="item" items="${prod.cartItem}}">
+            <c:forEach var="item" items="${prod.getCartItem()}">
                 <tr>
                     <td>${item.getId()}</td>
                     <td>${item.getName()}</td>
                     <td>${item.getType()}</td>
                     <td>${item.getPrice()}</td>
                     <td>${item.getQuantity()}</td>
-
                 </tr>
             </c:forEach>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td>Total</td>
-                    <td>${prod.getAmount()}</td>
-                    <td></td>
-                </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>Total</td>
+                <td>${prod.getAmount()}</td>
+                <td></td>
+            </tr>
         </table>
     </body>
 </html>

@@ -19,16 +19,20 @@ public class Product {
     private float price;
     private int quantity;
 
-    public Product() {
-    }
-
     public Product(int id, String name, String type, float price) {
         this.id = id;
         this.name = name;
         this.type = type;
         this.price = price;
-
+       
     }
+
+    public Product() {
+    }
+    
+
+   
+   
 
     public int getQuantity() {
         return quantity;
