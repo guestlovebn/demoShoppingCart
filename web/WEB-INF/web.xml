@@ -12,6 +12,10 @@
         <servlet-name>SendEmailServlet</servlet-name>
         <servlet-class>com.shoppingCart.controller.SendEmailServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>FinishSession</servlet-name>
+        <servlet-class>com.shoppingCart.controller.FinishSession</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ShoppingServlet</servlet-name>
         <url-pattern>/Shopping</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>SendEmailServlet</servlet-name>
         <url-pattern>/sendEmail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FinishSession</servlet-name>
+        <url-pattern>/finish</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

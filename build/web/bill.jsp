@@ -46,7 +46,7 @@
         <form action="sendEmail" method="POST">
             <input type="button" onclick="window.print()" value="Print">
             <input type="submit" value="Send an email">
-            <input type="button" value="Done" onclick="window.location.replace('index.jsp')">
+            <input type="button" value="Done" onclick="window.location.replace('finish')">
         </form>
     </body>
 </html>
