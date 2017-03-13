@@ -71,25 +71,9 @@ public class ShoppingServlet extends HttpServlet {
         if (session == null) {
             response.sendRedirect("shoppingError.jsp");
         }
-//        String products=request.getParameter("products");
-//        String[] data=products.split("|");
-//        Product product=new Product(Integer.parseInt(data[0]),data[1],data[2],Float.parseFloat(data[3]));
         ProductCart buyList = (ProductCart) session.getAttribute("prod");
+        
         String action = request.getParameter("action");
-//        if (!action.equalsIgnoreCase("checkout")) {
-//            if (action.equalsIgnoreCase("delete")) {
-//
-//            } else {
-//                if (action.equalsIgnoreCase("add")) {
-//
-//                } else if (action.equalsIgnoreCase("checkout")) {
-//
-//                }
-//
-//            }
-//            RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
-//            rd.forward(request, response);
-//        }
         switch (action.toLowerCase()) {
             case "delete":
                 int productId = Integer.parseInt(request.getParameter("delItem"));
@@ -107,8 +91,8 @@ public class ShoppingServlet extends HttpServlet {
                 rd.forward(request, response);
                 break;
             case "checkout":
-                ServletContext sc=getServletContext();
-                rd = request.getRequestDispatcher("checkout.jsp");                
+                ServletContext sc = getServletContext();
+                rd = request.getRequestDispatcher("checkout.jsp");
                 rd.forward(request, response);
                 break;
             default:

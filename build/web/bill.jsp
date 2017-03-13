@@ -1,24 +1,21 @@
 <%-- 
-    Document   : checkout
-    Created on : Mar 8, 2017, 1:11:58 PM
-    Author     : TienNN5
+    Document   : bill
+    Created on : Mar 13, 2017, 1:44:31 PM
+    Author     : FIA
 --%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<fmt:setLocale value="${param.language}" />
-<fmt:setBundle basename="com.shoppingCart.language.shopping" />
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title><fmt:message key="title" /></title>
+        <title>Transaction Details Page</title>
     </head>
     <body>
-
         <jsp:useBean id="prod" class="com.shoppingCart.model.ProductCart" scope="session"/>
-        <h1><fmt:message key="transaction" /></h1>
-
+        <h1>Payment Details</h1>
+        <h3>To ${sessionScope.customerName}</h3>
+        <br>
         <table>
             <tr>
                 <td><b><fmt:message key="productId" /></b></td>
@@ -28,7 +25,7 @@
                 <td><b><fmt:message key="quantity" /></b></td>
             </tr>
 
-            <c:forEach var="item" items="${prod.getCartItem()}">
+            <c:forEach var="item" items="${sessionScope.prod.getCartItem()}">
                 <tr>
                     <td>${item.getId()}</td>
                     <td>${item.getName()}</td>
@@ -45,10 +42,11 @@
                 <td></td>
             </tr>
         </table>
-        <form action="extractBill" method="POST">
-            <input type="text" placeholder="Name" name="cusName"/>
-            <input type="email" placeholder="Email" name="cusEmail"/>
-            <input type="submit" value="Extract Bill"/>
+
+        <form action="sendEmail" method="POST">
+            <input type="button" onclick="window.print()" value="Print">
+            <input type="submit" value="Send an email">
+            <input type="button" value="Done" onclick="window.location.replace('index.jsp')">
         </form>
     </body>
 </html>

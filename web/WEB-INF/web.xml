@@ -4,9 +4,25 @@
         <servlet-name>ShoppingServlet</servlet-name>
         <servlet-class>com.shoppingCart.controller.ShoppingServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>BillExtractorServlet</servlet-name>
+        <servlet-class>com.shoppingCart.controller.BillExtractorServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SendEmailServlet</servlet-name>
+        <servlet-class>com.shoppingCart.controller.SendEmailServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ShoppingServlet</servlet-name>
         <url-pattern>/Shopping</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BillExtractorServlet</servlet-name>
+        <url-pattern>/extractBill</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SendEmailServlet</servlet-name>
+        <url-pattern>/sendEmail</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

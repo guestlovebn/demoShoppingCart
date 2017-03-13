@@ -45,5 +45,10 @@
                 <td></td>
             </tr>
         </table>
+        <form action="extractBill" method="POST">
+            <input type="text" placeholder="Name" name="cusName"/>
+            <input type="email" placeholder="Email" name="cusEmail"/>
+            <input type="submit" value="Extract Bill"/>
+        </form>
     </body>
 </html>

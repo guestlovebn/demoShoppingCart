@@ -85,7 +85,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_meth_fmt_message_1(_jspx_page_context))
         return;
       out.write("</h1>\n");
-      out.write("        \n");
+      out.write("\n");
       out.write("        <hr>\n");
       out.write("        ");
       com.shoppingCart.model.ProductCart prod = null;
@@ -107,13 +107,13 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_meth_c_forEach_0(_jspx_page_context))
         return;
       out.write("\n");
-      out.write("                    \n");
-      out.write("                    <br/> \n");
-      out.write("                    <br/>\n");
-      out.write("                    <b>Quantity</b>\n");
-      out.write("                    <input type=\"text\" value=\"1\" name=\"quantity\" />\n");
-      out.write("                    <input type=\"hidden\" name=\"action\" value=\"ADD\" />\n");
-      out.write("                    <input type=\"submit\" name=\"Submit\" value=\"");
+      out.write("\n");
+      out.write("                <br/> \n");
+      out.write("                <br/>\n");
+      out.write("                <b>Quantity</b>\n");
+      out.write("                <input type=\"text\" value=\"1\" name=\"quantity\" />\n");
+      out.write("                <input type=\"hidden\" name=\"action\" value=\"ADD\" />\n");
+      out.write("                <input type=\"submit\" name=\"Submit\" value=\"");
       if (_jspx_meth_fmt_message_3(_jspx_page_context))
         return;
       out.write("\"\n");
@@ -125,8 +125,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        ");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "cart.jsp", out, true);
       out.write("\n");
-      out.write("        \n");
-      out.write("        \n");
+      out.write("\n");
+      out.write("\n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {
@@ -259,7 +259,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${p.getPrice()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("\n");
           out.write("                    </option>\n");
-          out.write("                    \n");
+          out.write("\n");
           out.write("                ");
           int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)

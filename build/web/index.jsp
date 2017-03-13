@@ -17,7 +17,7 @@
     </head>
     <body style="background-color: #FFFFCC">
         <h1><fmt:message key="welcome" /></h1>
-        
+
         <hr>
         <jsp:useBean id="prod" class="com.shoppingCart.model.ProductCart" />
         <form  action="Shopping"  name="shoppingForm" method="POST">
@@ -27,20 +27,20 @@
                     <option>
                         ${p.getId()}|${p.getName()}|${p.getType()}|${p.getPrice()}
                     </option>
-                    
+
                 </c:forEach>
-                    
-                    <br/> 
-                    <br/>
-                    <b>Quantity</b>
-                    <input type="text" value="1" name="quantity" />
-                    <input type="hidden" name="action" value="ADD" />
-                    <input type="submit" name="Submit" value="<fmt:message key="btnAdd" />"
+
+                <br/> 
+                <br/>
+                <b>Quantity</b>
+                <input type="text" value="1" name="quantity" />
+                <input type="hidden" name="action" value="ADD" />
+                <input type="submit" name="Submit" value="<fmt:message key="btnAdd" />"
             </select>
         </form>
         <p>${msg}</p>
         <jsp:include page="cart.jsp"  flush="true"/>
-        
-        
+
+
     </body>
 </html>
